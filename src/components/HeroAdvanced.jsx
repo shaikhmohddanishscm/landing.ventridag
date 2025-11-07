@@ -36,7 +36,7 @@ const HeroAdvanced = () => {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,0,64,0.4),rgba(0,0,0,0))]"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 z-10">
-        <div className="text-center max-w-5xl mx-auto">
+        <div className="text-center max-w-5xl mx-auto px-2">
           {/* Animated Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -70,7 +70,7 @@ const HeroAdvanced = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 2.5 }}
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4"
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2 sm:px-4"
           >
             AI-powered analytics, geospatial intelligence, and real-time insights
             to optimize operations and drive growth.
@@ -81,7 +81,7 @@ const HeroAdvanced = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center mb-12 sm:mb-16 px-4"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center mb-12 sm:mb-16 px-2 sm:px-4"
           >
             <MovingBorder
               duration={3000}
@@ -121,7 +121,7 @@ const HeroAdvanced = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 3.5 }}
-            className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16 px-4"
+            className="flex flex-wrap justify-center gap-3 sm:gap-4 lg:gap-6 mb-12 sm:mb-16 px-2 sm:px-4"
           >
             {[
               { label: "2768+ Orders", icon: CheckCircle2 },
@@ -150,15 +150,15 @@ const HeroAdvanced = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 4 }}
-            className="relative max-w-6xl mx-auto px-2"
+            className="relative max-w-6xl mx-auto px-0 sm:px-2"
           >
             {/* Animated glow background */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary-500 via-pink-500 to-purple-500 rounded-3xl opacity-20 blur-3xl"></div>
+            <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-primary-500 via-pink-500 to-purple-500 rounded-3xl opacity-20 blur-3xl"></div>
             
             <motion.div
               whileHover={{ scale: 1.02, y: -5 }}
               transition={{ duration: 0.3 }}
-              className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-b from-white/5 to-white/0 backdrop-blur-xl p-3 sm:p-4 shadow-2xl"
+              className="relative rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-b from-white/5 to-white/0 backdrop-blur-xl p-2 sm:p-3 lg:p-4 shadow-2xl"
             >
               {/* Animated border glow */}
               <motion.div
@@ -190,9 +190,9 @@ const HeroAdvanced = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 4.5 }}
-                  className="absolute top-3 left-3 sm:top-6 sm:left-6 px-3 py-2 sm:px-4 sm:py-3 rounded-xl sm:rounded-2xl bg-black/90 backdrop-blur-xl border border-green-500/30 shadow-lg shadow-green-500/20"
+                  className="absolute top-2 left-2 sm:top-4 sm:left-4 lg:top-6 lg:left-6 px-2 py-1.5 sm:px-3 sm:py-2 lg:px-4 lg:py-3 rounded-lg sm:rounded-xl lg:rounded-2xl bg-black/90 backdrop-blur-xl border border-green-500/30 shadow-lg shadow-green-500/20"
                 >
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1.5 sm:gap-2">
                     <motion.div
                       animate={{
                         scale: [1, 1.3, 1],
@@ -202,9 +202,9 @@ const HeroAdvanced = () => {
                         ],
                       }}
                       transition={{ duration: 2, repeat: Infinity }}
-                      className="w-2 h-2 bg-green-500 rounded-full"
+                      className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full"
                     />
-                    <span className="text-xs sm:text-sm font-semibold text-white">Live Data</span>
+                    <span className="text-[10px] sm:text-xs lg:text-sm font-semibold text-white">Live Data</span>
                   </div>
                 </motion.div>
 
@@ -213,11 +213,11 @@ const HeroAdvanced = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 4.7 }}
-                  className="absolute bottom-3 right-3 sm:bottom-6 sm:right-6 px-3 py-2 sm:px-4 sm:py-3 rounded-xl sm:rounded-2xl bg-black/90 backdrop-blur-xl border border-primary-500/30 shadow-lg shadow-primary-500/20"
+                  className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 lg:bottom-6 lg:right-6 px-2 py-1.5 sm:px-3 sm:py-2 lg:px-4 lg:py-3 rounded-lg sm:rounded-xl lg:rounded-2xl bg-black/90 backdrop-blur-xl border border-primary-500/30 shadow-lg shadow-primary-500/20"
                 >
-                  <div className="flex items-center gap-2">
-                    <span className="text-xl sm:text-2xl font-bold text-primary-500">175+</span>
-                    <span className="text-xs sm:text-sm text-gray-300">Active Nodes</span>
+                  <div className="flex items-center gap-1.5 sm:gap-2">
+                    <span className="text-base sm:text-xl lg:text-2xl font-bold text-primary-500">175+</span>
+                    <span className="text-[10px] sm:text-xs lg:text-sm text-gray-300 whitespace-nowrap">Active Nodes</span>
                   </div>
                 </motion.div>
               </div>

@@ -9,9 +9,9 @@ import FooterSimple from './components/FooterSimple'
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Header />
-      <main>
+      <main className="overflow-x-hidden">
         <HeroAdvanced />
         <DashboardShowcase />
         <FeaturesAceternity />

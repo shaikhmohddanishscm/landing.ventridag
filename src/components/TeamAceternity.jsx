@@ -52,7 +52,7 @@ const TeamAceternity = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16 px-4"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -63,16 +63,16 @@ const TeamAceternity = () => {
             <span className="text-sm font-medium">Our Team</span>
           </motion.div>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent">
             Meet the Visionaries
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto px-4">
             World-class team from top tech companies and institutions, united by a vision to transform supply chains
           </p>
         </motion.div>
 
         {/* Team Focus Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-4 sm:px-0">
           {team.map((member, index) => (
             <motion.div
               key={index}
@@ -88,7 +88,7 @@ const TeamAceternity = () => {
             >
               <div className="relative h-full">
                 {/* Image Container with Focus Effect */}
-                <div className="relative h-72 md:h-96 overflow-hidden rounded-t-3xl bg-gradient-to-b from-gray-900 to-black">
+                <div className="relative h-64 sm:h-72 md:h-96 overflow-hidden rounded-t-3xl bg-gradient-to-b from-gray-900 to-black">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -119,12 +119,12 @@ const TeamAceternity = () => {
                   </motion.a>
 
                   {/* Name overlay on image */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="text-2xl font-bold mb-1 bg-gradient-to-b from-white to-white/60 bg-clip-text text-transparent">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+                    <h3 className="text-xl sm:text-2xl font-bold mb-1 bg-gradient-to-b from-white to-white/60 bg-clip-text text-transparent">
                       {member.name}
                     </h3>
-                    <div className="inline-block px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
-                      <p className="text-xs font-medium text-gray-200">
+                    <div className="inline-block px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+                      <p className="text-[10px] sm:text-xs font-medium text-gray-200">
                         {member.role}
                       </p>
                     </div>
@@ -132,19 +132,19 @@ const TeamAceternity = () => {
                 </div>
 
                 {/* Content Below Image */}
-                <div className="p-6">
-                  <p className="text-gray-400 mb-4 leading-relaxed text-sm">
+                <div className="p-4 sm:p-6">
+                  <p className="text-gray-400 mb-3 sm:mb-4 leading-relaxed text-xs sm:text-sm">
                     {member.bio}
                   </p>
 
                   {/* Details */}
                   <div className="space-y-2">
-                    <div className="flex items-center gap-2 text-xs px-3 py-2 rounded-lg bg-white/5 border border-white/10">
-                      <GraduationCap className="w-3.5 h-3.5 text-primary-500 flex-shrink-0" />
+                    <div className="flex items-center gap-2 text-[10px] sm:text-xs px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg bg-white/5 border border-white/10">
+                      <GraduationCap className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary-500 flex-shrink-0" />
                       <span className="text-gray-300">{member.education}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-xs px-3 py-2 rounded-lg bg-white/5 border border-white/10">
-                      <Award className="w-3.5 h-3.5 text-primary-500 flex-shrink-0" />
+                    <div className="flex items-center gap-2 text-[10px] sm:text-xs px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg bg-white/5 border border-white/10">
+                      <Award className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary-500 flex-shrink-0" />
                       <span className="text-gray-300">{member.experience}</span>
                     </div>
                   </div>

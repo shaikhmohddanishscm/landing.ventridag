@@ -91,7 +91,7 @@ const FeaturesAceternity = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16 px-4"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -103,16 +103,16 @@ const FeaturesAceternity = () => {
             <span className="text-sm font-medium">Powerful Features</span>
           </motion.div>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent px-4">
             Everything You Need to Succeed
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto px-4">
             Comprehensive tools and features designed to transform your supply chain operations
           </p>
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid gap-8 lg:gap-12">
+        <div className="grid gap-6 sm:gap-8 lg:gap-12 px-2 sm:px-0">
           {features.map((feature, index) => (
             <FeatureCard
               key={index}
@@ -146,24 +146,24 @@ const FeatureCard = ({ feature, index, onImageClick }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className={`grid lg:grid-cols-2 gap-8 items-center ${!isEven ? 'lg:grid-flow-dense' : ''}`}
+      className={`grid lg:grid-cols-2 gap-6 sm:gap-8 items-center ${!isEven ? 'lg:grid-flow-dense' : ''}`}
     >
       {/* Content */}
       <motion.div
         initial={{ opacity: 0, x: isEven ? -30 : 30 }}
         animate={isInView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className={`${!isEven ? 'lg:col-start-2' : ''}`}
+        className={`${!isEven ? 'lg:col-start-2' : ''} px-4 sm:px-0`}
       >
-        <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br ${feature.gradient} bg-opacity-10 mb-6`}>
-          <feature.icon className={`w-8 h-8 bg-gradient-to-br ${feature.gradient} bg-clip-text text-transparent`} style={{ WebkitTextFillColor: 'transparent', WebkitBackgroundClip: 'text' }} />
+        <div className={`inline-flex p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-gradient-to-br ${feature.gradient} bg-opacity-10 mb-4 sm:mb-6`}>
+          <feature.icon className={`w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br ${feature.gradient} bg-clip-text text-transparent`} style={{ WebkitTextFillColor: 'transparent', WebkitBackgroundClip: 'text' }} />
         </div>
 
-        <h3 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-b from-white to-white/60 bg-clip-text text-transparent">
+        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 bg-gradient-to-b from-white to-white/60 bg-clip-text text-transparent">
           {feature.title}
         </h3>
 
-        <p className="text-lg text-gray-400 leading-relaxed">
+        <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
           {feature.description}
         </p>
       </motion.div>
@@ -173,18 +173,18 @@ const FeatureCard = ({ feature, index, onImageClick }) => {
         initial={{ opacity: 0, x: isEven ? 30 : -30 }}
         animate={isInView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className={`${!isEven ? 'lg:col-start-1 lg:row-start-1' : ''}`}
+        className={`${!isEven ? 'lg:col-start-1 lg:row-start-1' : ''} px-4 sm:px-0`}
       >
         {feature.images ? (
           // Multiple images grid
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
             {feature.images.map((img, idx) => (
               <CardSpotlight
                 key={idx}
                 className={`group cursor-pointer ${idx === 2 ? 'col-span-2' : ''}`}
                 onClick={() => onImageClick(feature.images, idx)}
               >
-                <div className="relative overflow-hidden rounded-3xl">
+                <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl">
                   <img
                     src={img}
                     alt={`${feature.title} ${idx + 1}`}
@@ -192,8 +192,8 @@ const FeatureCard = ({ feature, index, onImageClick }) => {
                   />
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="bg-white/10 backdrop-blur-xl rounded-full p-4 border border-white/20">
-                      <ZoomIn className="w-8 h-8" />
+                    <div className="bg-white/10 backdrop-blur-xl rounded-full p-3 sm:p-4 border border-white/20">
+                      <ZoomIn className="w-6 h-6 sm:w-8 sm:h-8" />
                     </div>
                   </div>
                 </div>
@@ -206,7 +206,7 @@ const FeatureCard = ({ feature, index, onImageClick }) => {
             className="group cursor-pointer"
             onClick={() => onImageClick(feature.image)}
           >
-            <div className="relative overflow-hidden rounded-3xl">
+            <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl">
               <img
                 src={feature.image}
                 alt={feature.title}
@@ -214,8 +214,8 @@ const FeatureCard = ({ feature, index, onImageClick }) => {
               />
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="bg-white/10 backdrop-blur-xl rounded-full p-4 border border-white/20">
-                  <ZoomIn className="w-8 h-8" />
+                <div className="bg-white/10 backdrop-blur-xl rounded-full p-3 sm:p-4 border border-white/20">
+                  <ZoomIn className="w-6 h-6 sm:w-8 sm:h-8" />
                 </div>
               </div>
             </div>

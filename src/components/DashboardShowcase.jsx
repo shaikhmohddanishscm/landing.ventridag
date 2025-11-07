@@ -3,7 +3,7 @@ import { MacbookScroll } from './ui/MacbookScroll'
 
 const DashboardShowcase = () => {
   return (
-    <div className="w-full overflow-hidden bg-black">
+    <div className="w-full overflow-hidden bg-black py-8 sm:py-12 md:py-16">
       <MacbookScroll
         src="/B.jpeg"
         showGradient={false}

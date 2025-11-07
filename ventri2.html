@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VentriDAG</title>
+
+  <style>
+    /* ===== Base Styles ===== */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+      background: rgba(15, 15, 15, 0.9);
+      box-shadow: 0 2px 20px rgba(255, 0, 60, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    header img {
+      width: 130px;
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      animation: pulse-glow 4s ease-in-out infinite;
+    }
+
+    h1 {
+      color: #ff0040;
+      font-size: 2.2em;
+      letter-spacing: 2px;
+      text-shadow: 0 0 15px rgba(255, 0, 70, 0.7);
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #bbb;
+      margin: 0 25px;
+      font-weight: 500;
+      font-size: 1.05em;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff0040;
+    }
+
+    section {
+      padding: 70px 10%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    h2 {
+      color: #ff0040;
+      text-align: center;
+      margin-bottom: 60px;
+      text-shadow: 0 0 20px rgba(255, 0, 60, 0.4);
+    }
+
+    /* ===== Roadmap Section ===== */
+    .roadmap {
+      display: flex;
+      flex-direction: column;
+      gap: 70px;
+    }
+
+    .roadmap-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 0 30px rgba(255, 0, 80, 0.15);
+      backdrop-filter: blur(10px);
+      transition: transform 0.4s, box-shadow 0.4s;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .roadmap-item.show {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.8s ease;
+    }
+
+    .roadmap-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 40px rgba(255, 0, 80, 0.25);
+    }
+
+    .roadmap-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .roadmap-item img {
+      width: 42%;
+      border-radius: 14px;
+      box-shadow: 0 0 25px rgba(255, 0, 80, 0.25);
+      transition: transform 0.5s;
+    }
+
+    .roadmap-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .roadmap-text {
+      width: 55%;
+    }
+
+    .roadmap-text h3 {
+      color: #ff0040;
+      margin-bottom: 10px;
+    }
+
+    /* ===== Team Section ===== */
+    .team {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .member {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 16px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 25px rgba(255, 0, 80, 0.1);
+    }
+
+    .member:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .member img {
+      width: 200px;
+      height: 200px;
+      border-radius: 16px;
+      background: #222;
+      object-fit: cover;
+      box-shadow: 0 0 25px rgba(255, 0, 80, 0.3);
+      animation: slow-glow 5s ease-in-out infinite alternate;
+    }
+
+    .member-details h3 {
+      color: #ff0040;
+      margin-bottom: 10px;
+    }
+
+    /* ===== Contact Section ===== */
+    .contact {
+      text-align: center;
+      font-size: 1.2em;
+    }
+
+    .contact p {
+      color: #b0b0b0;
+      line-height: 1.8;
+    }
+
+    .contact a {
+      color: #ff0040;
+      text-decoration: none;
+      transition: text-shadow 0.3s;
+    }
+
+    .contact a:hover {
+      text-shadow: 0 0 10px rgba(255, 0, 80, 0.6);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #111;
+      color: #777;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== Animations ===== */
+    @keyframes pulse-glow {
+      0%, 100% {
+        box-shadow: 0 0 15px rgba(255, 0, 80, 0.4), 0 0 40px rgba(255, 0, 80, 0.2);
+      }
+      50% {
+        box-shadow: 0 0 25px rgba(255, 0, 80, 0.8), 0 0 60px rgba(255, 0, 80, 0.5);
+      }
+    }
+
+    @keyframes slow-glow {
+      from { filter: drop-shadow(0 0 10px rgba(255, 0, 80, 0.3)); }
+      to { filter: drop-shadow(0 0 20px rgba(255, 0, 80, 0.6)); }
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px) {
+      .roadmap-item, .member {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .roadmap-item img, .roadmap-text {
+        width: 100%;
+      }
+
+      .member img {
+        width: 160px;
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="3e992c45-6825-40a8-9fe4-db9d0de17c13.jpg" alt="VentriDAG Logo" />
+    <h1>VentriDAG</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ===== Home / Roadmap Section ===== -->
+  <section id="home">
+    <h2>Home</h2>
+    <div class="roadmap">
+      <div class="roadmap-item">
+        <div class="roadmap-text">
+          <h3>A: Seamless Data Integration</h3>
+          <p>Integrate your data with us and manage everything through our centralized data management platform.</p>
+        </div>
+        <img src="A.jpg" alt="Seamless Data Integration">
+      </div>
+
+      <div class="roadmap-item">
+        <div class="roadmap-text">
+          <h3>B: Network Maps</h3>
+          <p>Get a sneak peek of your entire business and entities through dynamic network visualizations.</p>
+        </div>
+        <img src="B.jpg" alt="Network Maps">
+      </div>
+
+      <div class="roadmap-item">
+        <div class="roadmap-text">
+          <h3>C: Business Map</h3>
+          <p>Gain spatio-temporal insights on sales, procurements, returns, and inventory.</p>
+        </div>
+        <img src="C.jpg" alt="Business Map">
+      </div>
+
+      <div class="roadmap-item">
+        <div class="roadmap-text">
+          <h3>D: Analytics</h3>
+          <p>Smart analytics to manage finances, credits, supplier reliability, and customer credibility.</p>
+        </div>
+        <img src="D.jpg" alt="Analytics">
+      </div>
+
+      <div class="roadmap-item">
+        <div class="roadmap-text">
+          <h3>E: Smart Recommendation</h3>
+          <p>AI-based recommendation systems offering proximity and inventory-optimized opportunity suggestions.</p>
+        </div>
+        <img src="E.jpg" alt="Smart Recommendation">
+      </div>
+
+      <div class="roadmap-item">
+        <div class="roadmap-text">
+          <h3>F: AI Integrated Agents</h3>
+          <p>Visualize data or get insights with AI agents—Analyst, Consultant & Assistant, all in one.</p>
+        </div>
+        <img src="F.jpg" alt="AI Integrated Agents">
+      </div>
+
+      <div class="roadmap-item">
+        <div class="roadmap-text">
+          <h3>G: Geo Spatial Tools</h3>
+          <p>Empower your business expansion with advanced geospatial intelligence for a competitive edge.</p>
+        </div>
+        <img src="G.jpg" alt="Geo Spatial Tools">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== About Us ===== -->
+  <section id="about">
+    <h2>About Us</h2>
+    <div class="team">
+      <div class="member">
+        <img src="1.jpg" alt="Gazanfar">
+        <div class="member-details">
+          <h3>Gazanfar (Co-founder, Strategy & Operations)</h3>
+          <p>Engineer and strategist with B.Tech. (SPCE Mumbai), M.Tech. (IIT Bombay), and DAAD Fellowship (TU Dresden). Experienced in business development and consulting across India and the U.S.</p>
+          <p>Leads business development, partnerships, and system design alignment between product and market needs.</p>
+          <p><em>LinkedIn: [Placeholder]</em></p>
+        </div>
+      </div>
+
+      <div class="member">
+        <img src="2.jpg" alt="Ashar">
+        <div class="member-details">
+          <h3>Ashar (Co-founder, Technical Lead)</h3>
+          <p>B.Tech. in Chemical Engineering (IIT Delhi) with professional experience as a developer in Tokyo, Japan.</p>
+          <p>Drives product engineering and AI integration, ensuring scalability and user-centric design.</p>
+          <p><em>LinkedIn: [Placeholder]</em></p>
+        </div>
+      </div>
+
+      <div class="member">
+        <img src="3.jpg" alt="Danish">
+        <div class="member-details">
+          <h3>Danish (Co-founder, Engineering & Product Ops)</h3>
+          <p>Electronics and Telecommunication engineer (Mumbai University) with backend and UI experience as SDE II in Bangalore.</p>
+          <p>Handles product deployment, API integrations, and operations, ensuring performance and scalability.</p>
+          <p><em>LinkedIn: [Placeholder]</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact Us ===== -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact">
+      <p>For demos or queries, reach out to:</p>
+      <p><strong>Gazanfar</strong></p>
+      <p>Email: <a href="mailto:email@email.com">email@email.com</a></p>
+      <p>Phone: <a href="tel:phone_number">phone_number</a></p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 VentriDAG. All rights reserved.
+  </footer>
+
+  <script>
+    // Scroll fade-in animation for roadmap items
+    const items = document.querySelectorAll('.roadmap-item');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    items.forEach(item => observer.observe(item));
+  </script>
+</body>
+</html>

@@ -125,7 +125,6 @@ const HeroAdvanced = () => {
           >
             {[
               { label: "2768+ Orders", icon: CheckCircle2 },
-              { label: "99.9% Uptime", icon: CheckCircle2 },
               { label: "AI-First", icon: CheckCircle2 },
             ].map((stat, idx) => (
               <motion.div

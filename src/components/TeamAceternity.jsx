@@ -8,31 +8,46 @@ const team = [
     name: 'Gazanfar',
     role: 'Co-founder, Strategy & Operations',
     image: '/gazanfar.jpeg',
-    education: 'SPCE Mumbai, IIT Bombay',
-    experience: 'BDO India, Consultant U.S.',
+    education: 'B.Tech. Civil Engineering (SPCE Mumbai), M.Tech. Transportation Systems (IIT Bombay)',
+    experience: 'Business Development Officer (India), Consultant & Systems Engineer (U.S.)',
     linkedin: 'https://www.linkedin.com/in/gazanfar-khan-a8b64517a/',
     gradient: 'from-blue-500 to-cyan-500',
-    bio: 'Engineer and strategist with B.Tech. (SPCE Mumbai), M.Tech. (IIT Bombay), and DAAD Fellowship (TU Dresden). Leads business development, partnerships, and system design.',
+    bioPoints: [
+      'B.Tech. in Civil Engineering from SPCE Mumbai and M.Tech. in Transportation Systems from IIT Bombay',
+      'DAAD Fellowship at TU Dresden, Germany',
+      'Prior experience as Business Development Officer (India) and Consultant & Systems Engineer (U.S.)',
+      'Leads business development, partnerships, and system design alignment at VentriDAG',
+    ],
   },
   {
     name: 'Ashar',
     role: 'Co-founder, Technical Lead',
     image: '/ashar.jpeg',
-    education: 'IIT Delhi',
-    experience: 'Software Developer, Tokyo',
+    education: 'B.Tech. Chemical Engineering (IIT Delhi)',
+    experience: 'Software Developer, Tokyo, Japan',
     linkedin: 'https://www.linkedin.com/in/ashar-mirza/',
     gradient: 'from-purple-500 to-pink-500',
-    bio: 'B.Tech. in Chemical Engineering (IIT Delhi) with development experience in Tokyo, Japan. Drives product engineering and AI integration.',
+    bioPoints: [
+      'B.Tech. in Chemical Engineering from IIT Delhi',
+      'Professional experience as Software Developer in Tokyo, Japan',
+      'Drives product engineering and AI integration',
+      'Ensures the platform is robust, user-centric, and scalable',
+    ],
   },
   {
     name: 'Danish',
     role: 'Co-founder, Engineering & Product Ops',
     image: '/danish.jpeg',
-    education: 'Mumbai University',
-    experience: 'SDE II, Bangalore',
+    education: 'Electronics & Telecommunication (Mumbai University)',
+    experience: 'SDE II and Junior Developer, Bangalore',
     linkedin: 'https://www.linkedin.com/in/shaikhmohddanish/',
     gradient: 'from-orange-500 to-red-500',
-    bio: 'Electronics & Telecommunication engineer (Mumbai University) with backend experience as SDE II in Bangalore. Handles deployment, API integrations, and operations.',
+    bioPoints: [
+      'Electronics & Telecommunication graduate from Mumbai University',
+      'Hands-on experience as SDE II and Junior Developer in Bangalore',
+      'Oversees deployment, API integrations, and operations',
+      'Ensures performance and scalability',
+    ],
   },
 ]
 
@@ -133,9 +148,14 @@ const TeamAceternity = () => {
 
                 {/* Content Below Image */}
                 <div className="p-4 sm:p-6">
-                  <p className="text-gray-400 mb-3 sm:mb-4 leading-relaxed text-xs sm:text-sm">
-                    {member.bio}
-                  </p>
+                  <ul className="text-gray-400 mb-3 sm:mb-4 space-y-2 text-xs sm:text-sm">
+                    {member.bioPoints.map((point, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <span className="text-primary-500 mt-1 flex-shrink-0">•</span>
+                        <span className="leading-relaxed">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
 
                   {/* Details */}
                   <div className="space-y-2">

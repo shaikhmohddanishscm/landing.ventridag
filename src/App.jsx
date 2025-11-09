@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import Header from './components/Header'
 import HeroAdvanced from './components/HeroAdvanced'
 import DashboardShowcase from './components/DashboardShowcase'
@@ -23,11 +24,31 @@ const HomePage = () => {
   )
 }
 
+// Scroll to hash component
+const ScrollToHash = () => {
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.hash) {
+      // Small delay to ensure the page has loaded
+      setTimeout(() => {
+        const element = document.querySelector(location.hash)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 100)
+    }
+  }, [location])
+
+  return null
+}
+
 function App() {
   return (
     <Router>
       <div className="min-h-screen overflow-x-hidden">
         <Header />
+        <ScrollToHash />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/case-study" element={<CaseStudy />} />

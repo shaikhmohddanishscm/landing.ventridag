@@ -18,10 +18,10 @@ const Header = () => {
 
   const navItems = [
     { name: 'Home', href: '/', isRoute: true },
-    { name: 'Features', href: '#features', isRoute: false },
+    { name: 'Features', href: '/#features', isRoute: true },
     { name: 'Case Study', href: '/case-study', isRoute: true },
-    { name: 'About', href: '#team', isRoute: false },
-    { name: 'Contact', href: '#contact', isRoute: false },
+    { name: 'About', href: '/#team', isRoute: true },
+    { name: 'Contact', href: '/#contact', isRoute: true },
   ]
 
   return (
@@ -55,25 +55,14 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              item.isRoute ? (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className="text-gray-300 hover:text-primary-500 transition-colors duration-300 font-medium text-lg relative group"
-                >
-                  {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300" />
-                </Link>
-              ) : (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-300 hover:text-primary-500 transition-colors duration-300 font-medium text-lg relative group"
-                >
-                  {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300" />
-                </a>
-              )
+              <Link
+                key={item.name}
+                to={item.href}
+                className="text-gray-300 hover:text-primary-500 transition-colors duration-300 font-medium text-lg relative group"
+              >
+                {item.name}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300" />
+              </Link>
             ))}
             <motion.a
               href={location.pathname === '/' ? '#contact' : '/#contact'}
@@ -104,25 +93,14 @@ const Header = () => {
             className="md:hidden mt-4 pb-4 space-y-3"
           >
             {navItems.map((item) => (
-              item.isRoute ? (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-gray-300 hover:text-primary-500 transition-colors duration-300 font-medium text-lg py-2"
-                >
-                  {item.name}
-                </Link>
-              ) : (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-gray-300 hover:text-primary-500 transition-colors duration-300 font-medium text-lg py-2"
-                >
-                  {item.name}
-                </a>
-              )
+              <Link
+                key={item.name}
+                to={item.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-gray-300 hover:text-primary-500 transition-colors duration-300 font-medium text-lg py-2"
+              >
+                {item.name}
+              </Link>
             ))}
             <a
               href={location.pathname === '/' ? '#contact' : '/#contact'}

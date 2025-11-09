@@ -35,7 +35,12 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/">
+          <Link 
+            to="/"
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}
+          >
             <motion.div
               className="flex items-center gap-3 group cursor-pointer"
               whileHover={{ scale: 1.05 }}

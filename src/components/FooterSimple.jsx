@@ -49,9 +49,6 @@ const FooterSimple = () => {
             <p className="text-xs sm:text-sm text-gray-500">
               © {currentYear} VentriDAG. All rights reserved.
             </p>
-            <p className="text-xs text-gray-600">
-              Powered by AI-first technology
-            </p>
           </div>
         </div>
       </div>

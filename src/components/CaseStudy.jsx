@@ -37,6 +37,9 @@ const CaseStudy = () => {
       {/* Hero Section */}
       <CaseStudyHero />
       
+      {/* Company Overview Image */}
+      <CompanyOverviewImage openPreview={openPreview} />
+      
       {/* Key Metrics Section */}
       <KeyMetrics />
 
@@ -110,11 +113,11 @@ const AboutMicrobial = ({ openPreview }) => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-12 relative group cursor-pointer"
-            onClick={() => openPreview('/casestudy/img29.jpg')}
+            onClick={() => openPreview('/casestudy/img231.jpg')}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-pink-500 rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
             <img
-              src="/casestudy/img29.jpg"
+              src="/casestudy/img231.jpg"
               alt="Microbial Solutions Business Overview"
               className="relative rounded-2xl border border-white/10 shadow-2xl w-full group-hover:scale-[1.02] transition-transform duration-300"
             />
@@ -150,15 +153,24 @@ const CaseStudyHero = () => {
           <span className="text-xs sm:text-sm font-medium">Success Story</span>
         </motion.div>
 
-        {/* Company Name */}
-        <motion.h3
+        {/* Company Name with Logo */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.5 }}
-          className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-3 sm:mb-4"
+          className="flex items-center justify-center gap-3 sm:gap-4 mb-3 sm:mb-4"
         >
-          Microbial Solutions Pvt. Ltd.
-        </motion.h3>
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-lg flex items-center justify-center overflow-hidden flex-shrink-0">
+            <img
+              src="/casestudy/microbial-logo.png"
+              alt="Microbial Solutions"
+              className="w-full h-full object-cover scale-125"
+            />
+          </div>
+          <h3 className="text-lg sm:text-xl md:text-2xl text-gray-400">
+            Microbial Solutions Pvt. Ltd.
+          </h3>
+        </motion.div>
 
         {/* Main Headline */}
         <motion.h1
@@ -205,6 +217,47 @@ const CaseStudyHero = () => {
         </motion.div>
       </motion.div>
     </LampContainer>
+  )
+}
+
+// Company Overview Image Section
+const CompanyOverviewImage = ({ openPreview }) => {
+  return (
+    <section className="relative pt-0 pb-12 sm:pb-16 lg:pb-20 bg-black">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="relative group cursor-pointer"
+          onClick={() => openPreview('/casestudy/img29.jpg')}
+        >
+          {/* Glow Effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 via-purple-500/20 to-primary-500/20 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          
+          {/* Image Container */}
+          <div className="relative rounded-2xl overflow-hidden border border-white/10 group-hover:border-primary-500/50 transition-all duration-300">
+            <img 
+              src="/casestudy/img29.jpg" 
+              alt="Microbial Solutions Business Overview"
+              className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
+            />
+            
+            {/* Overlay on Hover */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            
+            {/* Click to Expand Hint */}
+            <div className="absolute bottom-4 right-4 flex items-center gap-2 px-4 py-2 rounded-lg bg-black/80 backdrop-blur-sm border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span className="text-xs sm:text-sm text-white">Click to expand</span>
+              <svg className="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+              </svg>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
   )
 }
 
@@ -570,10 +623,10 @@ const SolutionSection = ({ openPreview }) => {
               className="grid grid-cols-2 gap-4"
             >
               {[
-                { src: '/casestudy/bs_2024.jpg', alt: 'Bio-Stimulant Sales 2024' },
-                { src: '/casestudy/bs_2026.jpg', alt: 'Bio-Stimulant Sales 2025' },
-                { src: '/casestudy/2024.jpg', alt: 'Total Sales 2024' },
-                { src: '/casestudy/tot_sales2025.jpg', alt: 'Total Sales 2025' }
+                { src: '/casestudy/bs_2024.jpg', alt: 'Bio-Stimulant Sales 2024', title: '1. Bio stimulant sales in 2024' },
+                { src: '/casestudy/bs_2026.jpg', alt: 'Bio-Stimulant Sales 2025', title: '2. Bio stimulant sales in 2025' },
+                { src: '/casestudy/2024.jpg', alt: 'Total Sales 2024', title: '3. Total sales in 2024' },
+                { src: '/casestudy/tot_sales2025.jpg', alt: 'Total Sales 2025', title: '4. Total sales in 2025' }
               ].map((image, idx) => (
                 <div
                   key={idx}
@@ -586,6 +639,11 @@ const SolutionSection = ({ openPreview }) => {
                     alt={image.alt}
                     className="relative rounded-xl border border-white/10 shadow-xl group-hover:scale-105 transition-transform duration-300 w-full h-full object-cover"
                   />
+                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/80 backdrop-blur-sm px-3 py-2 rounded-lg border border-white/10">
+                    <h4 className="text-xs font-semibold text-white whitespace-nowrap">
+                      {image.title}
+                    </h4>
+                  </div>
                 </div>
               ))}
             </motion.div>
@@ -632,10 +690,10 @@ const SolutionSection = ({ openPreview }) => {
               className="grid grid-cols-2 gap-4"
             >
               {[
-                { src: '/casestudy/bs_2024.jpg', alt: 'Bio-Stimulant Sales 2024' },
-                { src: '/casestudy/bs_2026.jpg', alt: 'Bio-Stimulant Sales 2025' },
-                { src: '/casestudy/2024.jpg', alt: 'Total Sales 2024' },
-                { src: '/casestudy/tot_sales2025.jpg', alt: 'Total Sales 2025' }
+                { src: '/casestudy/bs_2024.jpg', alt: 'Bio-Stimulant Sales 2024', title: '1. Bio stimulant sales in 2024' },
+                { src: '/casestudy/bs_2026.jpg', alt: 'Bio-Stimulant Sales 2025', title: '2. Bio stimulant sales in 2025' },
+                { src: '/casestudy/2024.jpg', alt: 'Total Sales 2024', title: '3. Total sales in 2024' },
+                { src: '/casestudy/tot_sales2025.jpg', alt: 'Total Sales 2025', title: '4. Total sales in 2025' }
               ].map((image, idx) => (
                 <div
                   key={idx}
@@ -648,6 +706,11 @@ const SolutionSection = ({ openPreview }) => {
                     alt={image.alt}
                     className="relative rounded-xl border border-white/10 shadow-xl group-hover:scale-105 transition-transform duration-300 w-full h-full object-cover"
                   />
+                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/80 backdrop-blur-sm px-2 py-1.5 rounded-lg border border-white/10">
+                    <h4 className="text-[10px] font-semibold text-white leading-tight whitespace-nowrap">
+                      {image.title}
+                    </h4>
+                  </div>
                 </div>
               ))}
             </motion.div>
@@ -687,10 +750,8 @@ const SolutionSection = ({ openPreview }) => {
               className="grid grid-cols-2 gap-4"
             >
               {[
-                { src: '/casestudy/img231.jpg', alt: 'Territory Optimization Analysis' },
                 { src: '/casestudy/img183.jpg', alt: 'Territory Expansion Map' },
-                { src: '/casestudy/Picture13.png', alt: 'Dealer Optimization Results' },
-                { src: '/casestudy/Picture11.png', alt: 'Network Analysis' }
+                { src: '/casestudy/Picture13.png', alt: 'Dealer Optimization Results' }
               ].map((image, idx) => (
                 <div
                   key={idx}

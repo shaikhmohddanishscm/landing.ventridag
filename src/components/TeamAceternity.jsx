@@ -22,7 +22,7 @@ const team = [
   {
     name: 'Ashar',
     role: 'Co-founder, Technical Lead',
-    image: '/ashar.jpeg',
+    image: '/ashar.jpg',
     education: 'B.Tech. Chemical Engineering (IIT Delhi)',
     experience: 'Software Developer, Tokyo, Japan',
     linkedin: 'https://www.linkedin.com/in/ashar-mirza/',

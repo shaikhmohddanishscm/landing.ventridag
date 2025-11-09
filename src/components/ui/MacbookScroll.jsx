@@ -40,14 +40,14 @@ export const MacbookScroll = ({
   return (
     <div
       ref={ref}
-      className="min-h-[140vh] flex flex-col items-center py-10 md:py-20 lg:py-32 justify-center flex-shrink-0 [perspective:800px] transform md:scale-100 scale-[0.5] sm:scale-[0.65]"
+      className="min-h-[120vh] flex flex-col items-center py-0 md:py-8 lg:py-16 justify-start pt-20 md:pt-32 flex-shrink-0 [perspective:800px] transform md:scale-100 scale-[0.5] sm:scale-[0.65]"
     >
       <motion.div
         style={{
           translateY: textTransform,
           opacity: textOpacity,
         }}
-        className="div max-w-5xl mb-10 md:mb-16 text-center "
+        className="div max-w-5xl mb-8 md:mb-12 text-center "
       >
         {badge && <div className="flex justify-center mb-4">{badge}</div>}
         <h1 className="text-3xl md:text-7xl font-bold bg-gradient-to-b from-white to-gray-400 bg-clip-text text-transparent">

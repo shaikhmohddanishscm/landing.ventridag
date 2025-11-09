@@ -31,6 +31,21 @@ const CaseStudyTeaser = () => {
                 <span className="text-sm font-medium">Success Story</span>
               </div>
 
+              {/* Company Logo and Name */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-xl overflow-hidden">
+                  <img
+                    src="/casestudy/microbial-logo.png"
+                    alt="Microbial Solutions"
+                    className="w-[85%] h-[85%] object-cover"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">Microbial Solutions</h3>
+                  <p className="text-sm text-gray-400">Fertilizer Manufacturing</p>
+                </div>
+              </div>
+
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-b from-white to-white/60 bg-clip-text text-transparent">
                 Real Results from{' '}
                 <span className="text-gradient">Real Businesses</span>

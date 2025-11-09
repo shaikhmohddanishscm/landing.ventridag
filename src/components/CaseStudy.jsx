@@ -215,7 +215,7 @@ const CaseStudyHero = () => {
 // STAR*PARADE Achievement Section
 const StarParadeSection = ({ openPreview }) => {
   return (
-    <section className="relative -mt-64 pt-0 pb-12 sm:pb-16 bg-black overflow-hidden">
+    <section className="relative -mt-40 pt-0 pb-12 sm:pb-16 bg-black overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,0,64,0.1),rgba(0,0,0,0))]"></div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

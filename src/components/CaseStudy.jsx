@@ -888,14 +888,15 @@ const SolutionSection = ({ openPreview }) => {
               className="grid grid-cols-2 gap-4"
             >
               {[
-                { src: '/casestudy/img183.jpg', alt: 'Territory Expansion Map' },
+                { src: '/casestudy/img231.jpg', alt: 'Territory Expansion Map before' },
+                { src: '/casestudy/img183.jpg', alt: 'Territory Expansion Map after' },
                 { src: '/casestudy/Picture13.png', alt: 'Dealer Optimization Results' },
                 { src: '/casestudy/Picture11.png', alt: 'Average Revenut per unit' },
               ].map((image, idx) => (
                 <div
                   key={idx}
                   className="relative cursor-pointer group"
-                  onClick={() => openPreview(['/casestudy/img183.jpg', '/casestudy/Picture13.png', '/casestudy/Picture11.png'], idx)}
+                  onClick={() => openPreview(['/casestudy/img231.jpg','/casestudy/img183.jpg', '/casestudy/Picture13.png', '/casestudy/Picture11.png'], idx)}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl blur-lg opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <img
@@ -930,14 +931,15 @@ const SolutionSection = ({ openPreview }) => {
               className="grid grid-cols-2 gap-4"
             >
               {[
-                { src: '/casestudy/img183.jpg', alt: 'Territory Expansion Map' },
+                { src: '/casestudy/img231.jpg', alt: 'Territory Expansion Map before' },
+                { src: '/casestudy/img183.jpg', alt: 'Territory Expansion Map after' },
                 { src: '/casestudy/Picture13.png', alt: 'Dealer Optimization Results' },
                 { src: '/casestudy/Picture11.png', alt: 'Network Analysis' }
               ].map((image, idx) => (
                 <div
                   key={idx}
                   className="relative cursor-pointer group"
-                  onClick={() => openPreview(['/casestudy/img183.jpg', '/casestudy/Picture13.png', '/casestudy/Picture11.png'], idx)}
+                  onClick={() => openPreview(['/casestudy/img231.jpg','/casestudy/img183.jpg', '/casestudy/Picture13.png', '/casestudy/Picture11.png'], idx)}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl blur-lg opacity-20 group-hover:opacity-30 transition-opacity"></div>
                   <img

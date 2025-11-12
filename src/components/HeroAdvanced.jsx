@@ -116,54 +116,26 @@ const HeroAdvanced = () => {
             </motion.a>
           </motion.div>
 
-          {/* Stats with Enhanced Animation */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 3.5 }}
-            className="flex flex-wrap justify-center gap-3 sm:gap-4 lg:gap-6 mb-12 sm:mb-16 px-2 sm:px-4"
-          >
-            {[
-              { label: "2768+ Orders", icon: CheckCircle2 },
-              { label: "AI-First", icon: CheckCircle2 },
-            ].map((stat, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 3.7 + idx * 0.1 }}
-                whileHover={{ scale: 1.1, y: -5 }}
-                className="relative group"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-pink-500/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="relative flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl">
-                  <stat.icon className="w-3 h-3 sm:w-4 sm:h-4 text-primary-500 flex-shrink-0" />
-                  <span className="text-xs sm:text-sm text-gray-300 font-medium">{stat.label}</span>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-
           {/* Dashboard Preview - Clean & Professional */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 4 }}
+            transition={{ duration: 0.8, delay: 3.5 }}
             className="relative max-w-6xl mx-auto px-0 sm:px-2"
           >
             {/* Animated glow background */}
-            <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-primary-500 via-pink-500 to-purple-500 rounded-3xl opacity-20 blur-3xl"></div>
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary-500 via-pink-500 to-purple-500 rounded-3xl opacity-15 blur-2xl"></div>
             
             <motion.div
               whileHover={{ scale: 1.02, y: -5 }}
               transition={{ duration: 0.3 }}
-              className="relative rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-b from-white/5 to-white/0 backdrop-blur-xl p-2 sm:p-3 lg:p-4 shadow-2xl"
+              className="relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl"
             >
               {/* Animated border glow */}
               <motion.div
-                className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500"
+                className="absolute -inset-px rounded-2xl lg:rounded-3xl opacity-75 hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 style={{
-                  background: "linear-gradient(90deg, transparent, rgba(255,0,64,0.3), transparent)",
+                  background: "linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,0,64,0.3), rgba(255,255,255,0.1))",
                   backgroundSize: "200% 100%",
                 }}
                 animate={{
@@ -176,11 +148,11 @@ const HeroAdvanced = () => {
                 }}
               />
               
-              <div className="relative">
+              <div className="relative bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm rounded-2xl lg:rounded-3xl overflow-hidden">
                 <img
-                  src="/B.jpeg"
+                  src="/ventridag.gif"
                   alt="VentriDAG Dashboard - Network Visualization"
-                  className="w-full rounded-xl sm:rounded-2xl shadow-2xl"
+                  className="w-full"
                   loading="eager"
                 />
                 
@@ -188,7 +160,7 @@ const HeroAdvanced = () => {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 4.5 }}
+                  transition={{ delay: 4 }}
                   className="absolute top-2 left-2 sm:top-4 sm:left-4 lg:top-6 lg:left-6 px-2 py-1.5 sm:px-3 sm:py-2 lg:px-4 lg:py-3 rounded-lg sm:rounded-xl lg:rounded-2xl bg-black/90 backdrop-blur-xl border border-green-500/30 shadow-lg shadow-green-500/20"
                 >
                   <div className="flex items-center gap-1.5 sm:gap-2">
@@ -211,7 +183,7 @@ const HeroAdvanced = () => {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 4.7 }}
+                  transition={{ delay: 4.2 }}
                   className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 lg:bottom-6 lg:right-6 px-2 py-1.5 sm:px-3 sm:py-2 lg:px-4 lg:py-3 rounded-lg sm:rounded-xl lg:rounded-2xl bg-black/90 backdrop-blur-xl border border-primary-500/30 shadow-lg shadow-primary-500/20"
                 >
                   <div className="flex items-center gap-1.5 sm:gap-2">
@@ -229,7 +201,7 @@ const HeroAdvanced = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 5 }}
+        transition={{ delay: 4.5 }}
         className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20"
       >
         <motion.div

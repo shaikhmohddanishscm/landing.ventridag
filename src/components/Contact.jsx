@@ -71,8 +71,8 @@ const Contact = () => {
                   </div>
                   <div className="min-w-0">
                     <div className="text-xs sm:text-sm font-semibold text-gray-400 mb-1">Email</div>
-                    <a href="mailto:khangazanfarali99@gmail.com" className="text-sm sm:text-base lg:text-lg text-white hover:text-primary-500 transition-colors break-all">
-                      khangazanfarali99@gmail.com
+                    <a href="mailto:info@ventridag.tech" className="text-sm sm:text-base lg:text-lg text-white hover:text-primary-500 transition-colors break-all">
+                      info@ventridag.tech
                     </a>
                   </div>
                 </motion.div>

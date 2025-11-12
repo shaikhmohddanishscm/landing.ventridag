@@ -33,7 +33,7 @@ const FooterSimple = () => {
                 <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </motion.a>
               <motion.a
-                href="mailto:khangazanfarali99@gmail.com"
+                href="mailto:info@ventridag.tech"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center justify-center gap-2 px-4 py-2 sm:py-2.5 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 text-white text-sm sm:text-base font-medium transition-colors"
